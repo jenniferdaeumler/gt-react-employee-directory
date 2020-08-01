@@ -3,6 +3,7 @@ import API from "../utils/API.js";
 
 class EmployeeTable extends Component {
   state = {
+    // people: []
     imageURL: "",
     name: "",
     city: "",
@@ -27,6 +28,7 @@ class EmployeeTable extends Component {
       .then((response) => {
         console.log(response.data.results[0]);
         this.setState({
+          // people: response.data.results
           imageURL: response.data.results[0].picture.thumbnail,
           name: response.data.results[0].name.first,
           location: response.data.results[0].location.city,
@@ -57,6 +59,7 @@ class EmployeeTable extends Component {
         <div className="row">
           <div className="col text-left">
             <ul>
+            {/* <li>{this.state.people}</li> */}
               <li>{this.state.name}</li>
               <li>{this.state.location}</li>
               <li>{this.state.email}</li>
