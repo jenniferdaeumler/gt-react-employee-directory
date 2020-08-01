@@ -1,5 +1,6 @@
 import React from "react";
-import EmployeeTable from "./components/EmployeeTable";
+import FindPeople from "./components/FindPeople"
+// import EmployeeTable from "./components/EmployeeTable";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
@@ -8,7 +9,7 @@ function App() {
     // <Router>
       <div>
     {/* <h1>Hello World</h1> */}
-    <EmployeeTable/>
+    <FindPeople/>
       </div>
     // </Router>
   );

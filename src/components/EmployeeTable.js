@@ -1,68 +1,21 @@
-import React, { Component } from "react";
-import API from "../utils/API.js";
+import React from "react";
 
-class EmployeeTable extends Component {
-  state = {
-    // people: []
-    imageURL: "",
-    name: "",
-    city: "",
-    email: "",
-    dob: "",
-    phone: "",
-  };
-
-  componentDidMount() {
-    this.getEmployee();
-  }
-
-  getEmployee = () => {
-    API.getEmployee()
-      .then((response) => {
-        console.log(response.data.results[0]);
-        this.setState({
-          // people: response.data.results
-          imageURL: response.data.results[0].picture.large,
-          name: response.data.results[0].name.first,
-          location: response.data.results[0].location.city,
-          email: response.data.results[0].email,
-          dob: response.data.results[0].dob.date,
-          phone: response.data.results[0].phone,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col text-center">
-            {this.state.imageURL && (
-              <img
-                src={this.state.imageURL}
-                alt="employee"
-              ></img>
-            )}
-          </div>
-        </div>
-        <div className="row">
-          <div className="col text-left">
-            <ul>
-            {/* <li>{this.state.people}</li> */}
-              <li>{this.state.name}</li>
-              <li>{this.state.location}</li>
-              <li>{this.state.email}</li>
-              <li>{this.state.dob}</li>
-              <li>{this.state.phone}</li> 
-            </ul>
-          </div>
-        </div>
-      </div>
-    );
-  }
+function EmployeeTable(props) {
+  return (
+    <ul className="list-group">
+      {props.people.map(result => (
+        <li className="list-group-item" key={result.id}>
+          <img alt="employee" src={result.picture.large} />
+          <li>{result.name.first} {result.name.last}</li>
+          <li>Phone: {result.phone}</li>
+          <li>City: {result.location.city}</li>
+          <li>Email: {result.email}</li>
+          <li>Age: {result.dob.age}</li>
+          <li>Phone: {result.phone}</li>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default EmployeeTable;
