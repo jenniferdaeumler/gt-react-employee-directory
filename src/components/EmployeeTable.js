@@ -28,10 +28,10 @@ class EmployeeTable extends Component {
         console.log(response.data.results[0]);
         this.setState({
           imageURL: response.data.results[0].picture.thumbnail,
-          name: response.data.results[0].name,
-          city: response.data.results[0].location,
+          name: response.data.results[0].name.first,
+          location: response.data.results[0].location.city,
           email: response.data.results[0].email,
-          dob: response.data.results[0].dob,
+          dob: response.data.results[0].dob.date,
           phone: response.data.results[0].phone,
         });
       })
@@ -57,12 +57,11 @@ class EmployeeTable extends Component {
         <div className="row">
           <div className="col text-left">
             <ul>
-                <p>{this.state.name}</p>
               <li>{this.state.name}</li>
               <li>{this.state.location}</li>
               <li>{this.state.email}</li>
               <li>{this.state.dob}</li>
-              <li>{this.state.phone}</li>
+              <li>{this.state.phone}</li> 
             </ul>
           </div>
         </div>
