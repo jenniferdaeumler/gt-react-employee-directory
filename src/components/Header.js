@@ -3,10 +3,10 @@ import React from "react";
 const Header = () => {
   return (
     <div>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Employee Directory</h1>
-          <p class="lead">
+      <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+          <h1 className="display-4">Employee Directory</h1>
+          <p className="lead">
           Sort or filter the employe directory as needed.
           </p>
         </div>
