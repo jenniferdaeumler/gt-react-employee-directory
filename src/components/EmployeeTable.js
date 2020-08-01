@@ -57,12 +57,12 @@ class EmployeeTable extends Component {
         <div className="row">
           <div className="col text-left">
             <ul>
-                {/* <p>{this.state.name}</p>
+                <p>{this.state.name}</p>
               <li>{this.state.name}</li>
               <li>{this.state.location}</li>
               <li>{this.state.email}</li>
               <li>{this.state.dob}</li>
-              <li>{this.state.phone}</li> */}
+              <li>{this.state.phone}</li>
             </ul>
           </div>
         </div>
