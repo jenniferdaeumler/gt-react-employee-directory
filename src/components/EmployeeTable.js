@@ -12,13 +12,6 @@ class EmployeeTable extends Component {
     phone: "",
   };
 
-  style = {
-    image: {
-      maxWidth: "25%",
-      height: "300px",
-    },
-  };
-
   componentDidMount() {
     this.getEmployee();
   }
@@ -29,7 +22,7 @@ class EmployeeTable extends Component {
         console.log(response.data.results[0]);
         this.setState({
           // people: response.data.results
-          imageURL: response.data.results[0].picture.thumbnail,
+          imageURL: response.data.results[0].picture.large,
           name: response.data.results[0].name.first,
           location: response.data.results[0].location.city,
           email: response.data.results[0].email,
@@ -51,7 +44,6 @@ class EmployeeTable extends Component {
               <img
                 src={this.state.imageURL}
                 alt="employee"
-                style={this.style.image}
               ></img>
             )}
           </div>
