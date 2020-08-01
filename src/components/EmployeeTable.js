@@ -8,7 +8,7 @@ class EmployeeTable extends Component {
     city: "",
     email: "",
     dob: "",
-    phone: ""
+    phone: "",
   };
 
   style = {
@@ -25,14 +25,14 @@ class EmployeeTable extends Component {
   getEmployee = () => {
     API.getEmployee()
       .then((response) => {
-        console.log(response);
+        console.log(response.data.results[0]);
         this.setState({
-          imageURL: response.data.picture,
-          name: response.data.name,
-          city: response.data.location,
-        email: response.data.email,
-        dob: response.data.dob,
-        phone: response.data.phone
+          imageURL: response.data.results[0].picture.thumbnail,
+          name: response.data.results[0].name,
+          city: response.data.results[0].location,
+          email: response.data.results[0].email,
+          dob: response.data.results[0].dob,
+          phone: response.data.results[0].phone,
         });
       })
       .catch((err) => {
@@ -57,11 +57,12 @@ class EmployeeTable extends Component {
         <div className="row">
           <div className="col text-left">
             <ul>
+                {/* <p>{this.state.name}</p>
               <li>{this.state.name}</li>
-              {/* <li>{this.state.location.city}</li> */}
+              <li>{this.state.location}</li>
               <li>{this.state.email}</li>
               <li>{this.state.dob}</li>
-              <li>{this.state.phone}</li>
+              <li>{this.state.phone}</li> */}
             </ul>
           </div>
         </div>
