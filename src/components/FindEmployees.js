@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API.js";
 import EmployeesTable from "./EmployeeTable";
 
-class FindPeople extends Component {
+class FindEmployees extends Component {
   state = {
     people: [],
     // imageURL: "",
@@ -39,10 +39,12 @@ class FindPeople extends Component {
   render() {
     return (
       <div>
-        <EmployeesTable people={this.state.people} />
+        <EmployeesTable people={this.state.people} 
+        />
+     
       </div>
     );
   }
 }
 
-export default FindPeople;
+export default FindEmployees;

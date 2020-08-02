@@ -19,7 +19,7 @@ import React from "react";
 // }
 
 function EmployeesTable(props) {
-  return (
+return (
     <div className="container">
       <table class="table" key={props.id}>
         <thead>
@@ -37,7 +37,7 @@ function EmployeesTable(props) {
               <img src={props.picture} alt={props.firstName}></img>
             </td>
             <td>
-              {props.firstName} {props.lastName}
+            {props.firstName} {props.lastName}
             </td>
             <td>{props.email}</td>
             <td>{props.phone}</td>
@@ -45,13 +45,13 @@ function EmployeesTable(props) {
         </tbody>
       </table>
     </div>
-  );
+)
 }
 
 // function renderTableData(props) {
 //     <tr key={result.id}>
-//     return (
-
+//     return ( 
+  
 //    {props.people.map(result => (
 //              <td>{result.name.last}</td>
 //              <td>{result.name.last}</td>
@@ -59,7 +59,9 @@ function EmployeesTable(props) {
 //              <td>{result.name.last}</td>
 //              </tr>
 //    ))}
-
+ 
+        
 //    ); }
+
 
 export default EmployeesTable;

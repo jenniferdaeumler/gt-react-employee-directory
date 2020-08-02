@@ -1,5 +1,5 @@
 import React from "react";
-import FindPeople from "./components/FindPeople";
+import FindEmployees from "./components/FindEmployees";
 import Header from "./components/Header";
 // import EmployeeTable from "./components/EmployeeTable";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -9,8 +9,8 @@ function App() {
     // <Router>
     <div>
       <Header />
-      <FindPeople/>
-      {/* {this.state.people.map((results) => (
+      <FindEmployees/>
+      {/* {state.people.map((results) => (
         <FindPeople
           firstName={results.name.first}
           lastName={results.name.last}
