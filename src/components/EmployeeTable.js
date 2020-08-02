@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // function EmployeeTable(props) {
 //   return (
@@ -19,9 +19,10 @@ import React from "react";
 // }
 
 function EmployeesTable(props) {
-return (
+  console.log(props.people);
+  return (
     <div className="container">
-      <table class="table" key={props.id}>
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">ID Picture</th>
@@ -32,36 +33,36 @@ return (
         </thead>
         <tbody>
           {/* we need a row with all the information of each employee */}
-          <tr>
+          {/* <tr>
             <td>
               <img src={props.picture} alt={props.firstName}></img>
             </td>
             <td>
-            {props.firstName} {props.lastName}
+              {props.firstName} {props.lastName}
             </td>
             <td>{props.email}</td>
             <td>{props.phone}</td>
-          </tr>
+          </tr> */}
+          {props.people.map(renderTableData)}
         </tbody>
       </table>
     </div>
-)
+  );
 }
 
-// function renderTableData(props) {
-//     <tr key={result.id}>
-//     return ( 
-  
-//    {props.people.map(result => (
-//              <td>{result.name.last}</td>
-//              <td>{result.name.last}</td>
-//              <td>{result.name.last}</td>
-//              <td>{result.name.last}</td>
-//              </tr>
-//    ))}
- 
-        
-//    ); }
-
+function renderTableData(person) {
+  return (
+    <tr key={person.login.uuid}>
+      <td>
+        <img src={person.picture.thumbnail} alt="Thumbnail" />
+      </td>
+      <td>
+        {person.name.last} {person.name.first}
+      </td>
+      <td>{person.email}</td>
+      <td>{person.phone}</td>
+    </tr>
+  );
+}
 
 export default EmployeesTable;
