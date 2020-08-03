@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API.js";
 import EmployeesTable from "./EmployeeTable";
+import FilterForm from "./FilterForm"
 
 class FindEmployees extends Component {
   state = {
@@ -39,9 +40,19 @@ class FindEmployees extends Component {
       });
   };
 
+ onFilter = (e) => {
+// console.log(e.target.value);
+const filteredNameArray = this.state.people.filter(person=>{
+  return person.name.first.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
+})
+// console.log(filteredName);
+this.setState({filteredPeople: filteredNameArray}) 
+ }
+
   render() {
     return (
       <div>
+          <FilterForm onFilter={this.onFilter} />
         <EmployeesTable people={this.state.filteredPeople} />
       </div>
     );

@@ -12,7 +12,7 @@ function App() {
     <div>
       <Header />
       <SortForm/>
-      <FilterForm/>
+      {/* <FilterForm/> */}
       <FindEmployees/>
       {/* {state.people.map((results) => (
         <FindPeople
