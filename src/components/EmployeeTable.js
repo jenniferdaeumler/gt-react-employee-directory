@@ -26,8 +26,22 @@ function EmployeesTable(props) {
         <thead>
           <tr>
             <th scope="col">ID Picture</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
+            <th
+              scope="col"
+              onClick={() => {
+                props.sortEmployeesByLastName();
+              }}
+            >
+              Name
+            </th>
+            <th
+              scope="col"
+              onClick={() => {
+                props.sortEmployeesByEmail();
+              }}
+            >
+              Email
+            </th>
             <th scope="col">Phone</th>
           </tr>
         </thead>
