@@ -1,10 +1,10 @@
 import React from "react";
-import "./FilterForm.css"
+
 
 const FilterForm = ({onFilter}) => {
   return (
     <div>
-      <form className="filterForm">
+      <form >
         <div className="form-group">
           <input
             type="text"

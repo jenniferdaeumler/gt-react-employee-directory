@@ -21,7 +21,7 @@ import React from "react";
 function EmployeesTable(props) {
   console.log(props.people);
   return (
-    <div className="container">
+    <div >
       <table className="table">
         <thead>
           <tr>

@@ -98,13 +98,21 @@ class FindEmployees extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+        <div className="row">
+        <div className="col-md-12">
         <FilterForm onFilter={this.onFilter} />
+        </div>
+        </div>
+        <div className="row">
+        <div className="col-md-12">
         <EmployeesTable
           people={this.state.filteredPeople}
           sortEmployeesByLastName={this.sortEmployeesByLastName}
           sortEmployeesByEmail={this.sortEmployeesByEmail}
         />
+        </div>
+        </div>
       </div>
     );
   }
