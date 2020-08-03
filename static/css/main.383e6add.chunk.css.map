@@ -1,1 +1,0 @@
-{"version":3,"sources":["FilterForm.css","SortForm.css"],"names":[],"mappings":"AAAA,YACI,eAAgB,CAChB,aACJ,CCHA,cACE,WAAY,CACZ,eACF","file":"main.383e6add.chunk.css","sourcesContent":[".filterForm{\n    margin-left: 10%;\n    margin-top: 1%;\n}",".form-control{\n  width: 300px;\n  margin-left: 10%;\n}"]}
