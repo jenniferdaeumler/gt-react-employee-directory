@@ -8,8 +8,10 @@ const FilterForm = ({onFilter}) => {
         <div className="form-group">
           <input
             type="text"
+            name= "search"
             className="filter"
-            placeholder="Filter by..."
+            placeholder="Filter by last name"
+            //onCHange update state of serach term 
             onChange = {onFilter}
           />
         </div>

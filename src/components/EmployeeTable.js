@@ -44,7 +44,7 @@ function renderTableData(person) {
         <img src={person.picture.thumbnail} alt="Employee Thumbnail" />
       </td>
       <td>
-        {person.name.last} {person.name.first}
+        {person.name.first} {person.name.last}
       </td>
       <td>{person.email}</td>
       <td>{person.phone}</td>

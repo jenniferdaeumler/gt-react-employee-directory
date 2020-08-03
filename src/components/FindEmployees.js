@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import API from "../utils/API.js";
 import EmployeesTable from "./EmployeeTable";
+import FilterForm from "./FilterForm"
 
 class FindEmployees extends Component {
   state = {
     people: [],
+    filteredPeople: [],
+    search: "",
     // imageURL: "",
     // name: "",
     // city: "",
@@ -22,6 +25,7 @@ class FindEmployees extends Component {
       .then((response) => {
         // console.log(response.data.results[0]);
         this.setState({
+          filteredPeople: response.data.results,
           people: response.data.results,
           // imageURL: response.data.results[0].picture.large,
           // name: response.data.results[0].name.first,
@@ -36,15 +40,25 @@ class FindEmployees extends Component {
       });
   };
 
+ onFilter = (e) => {
+// console.log(e.target.value);
+const filteredNameArray = this.state.people.filter(person=>{
+  return person.name.last.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
+})
+// console.log(filteredName);
+this.setState({filteredPeople: filteredNameArray}) 
+ }
+
   render() {
     return (
       <div>
-        <EmployeesTable people={this.state.people} 
-        />
-     
+          <FilterForm onFilter={this.onFilter} />
+        <EmployeesTable people={this.state.filteredPeople} />
       </div>
     );
   }
 }
 
 export default FindEmployees;
+
+//two functions that sort or filter updated filteredPeople 
