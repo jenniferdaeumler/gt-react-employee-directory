@@ -3,7 +3,6 @@ import API from "../utils/API.js";
 import EmployeesTable from "./EmployeeTable";
 import FilterForm from "./FilterForm";
 
-
 class FindEmployees extends Component {
   state = {
     people: [],
@@ -57,8 +56,7 @@ class FindEmployees extends Component {
   // sortByLastName = (e) => {
   //   console.log(e.target.value);
   //   const sortedLastNameArray = this.state.people.sort((a,b) => {
-  
-        
+
   //         if(a.name.last < b.name.last) { return -1; }
   //         if(a.name.last > b.name.last) { return 1; }
   //         return 0;
@@ -68,25 +66,45 @@ class FindEmployees extends Component {
   //   this.setState({ sortedPeople: sortedLastNameArray });
   // };
 
+  sortEmployeesByLastName = () => {
+    console.log("hello world");
+    function compareDesc(a, b) {
+      if (a.name.last < b.name.last) {
+        return -1;
+      }
+      if (b.name.last < a.name.last) {
+        return 1;
+      }
+      return 0;
+    }
+    const sortedEmployeesByLastName = this.state.people.sort(compareDesc);
+    this.setState({ sortedPeople: sortedEmployeesByLastName });
+  };
 
-sortEmployees = () => {
-  console.log("hello world")
-function compareDesc(a,b){
-  if(a.name.last < b.name.last) { return -1; }
-  if(b.name.last < a.name.last) { return 1; }
-  return 0;
-}
-const sortedEmployees = this.state.people.sort(compareDesc);
-this.setState({ sortedPeople: sortedEmployees });
-}
-
-
+  sortEmployeesByEmail = () => {
+    console.log("hello email");
+    function compareDesc(a, b) {
+      if (a.email < b.email) {
+        return -1;
+      }
+      if (b.email < a.email) {
+        return 1;
+      }
+      return 0;
+    }
+    const sortedEmployeesByEmail = this.state.people.sort(compareDesc);
+    this.setState({ sortedPeople: sortedEmployeesByEmail });
+  };
 
   render() {
     return (
       <div>
         <FilterForm onFilter={this.onFilter} />
-        <EmployeesTable people={this.state.filteredPeople} sortEmployees={this.sortEmployees}/>
+        <EmployeesTable
+          people={this.state.filteredPeople}
+          sortEmployeesByLastName={this.sortEmployeesByLastName}
+          sortEmployeesByEmail={this.sortEmployeesByEmail}
+        />
       </div>
     );
   }
