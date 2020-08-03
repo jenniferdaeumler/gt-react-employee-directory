@@ -6,9 +6,9 @@ const SortForm = () => {
     <div>
       <select className="form-control">
         <option>Sort Employees</option>
-        <option>Last Name</option>
-        <option>Email</option>
-        <option>Phone</option>
+        <option >By Last Name</option>
+        {/* <option>Email</option>
+        <option>Phone</option> */}
       </select>
     </div>
   );

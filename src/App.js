@@ -1,8 +1,6 @@
 import React from "react";
 import FindEmployees from "./components/FindEmployees";
 import Header from "./components/Header";
-import SortForm from "./components/SortForm";
-import FilterForm from "./components/FilterForm"
 // import EmployeeTable from "./components/EmployeeTable";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -11,8 +9,6 @@ function App() {
     // <Router>
     <div>
       <Header />
-      <SortForm/>
-      {/* <FilterForm/> */}
       <FindEmployees/>
       {/* {state.people.map((results) => (
         <FindPeople

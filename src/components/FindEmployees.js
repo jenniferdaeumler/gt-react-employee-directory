@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import API from "../utils/API.js";
 import EmployeesTable from "./EmployeeTable";
-import FilterForm from "./FilterForm"
+import FilterForm from "./FilterForm";
+import SortForm from "./SortForm.js";
 
 class FindEmployees extends Component {
   state = {
     people: [],
     filteredPeople: [],
+    sortedPeople: [],
     search: "",
     // imageURL: "",
     // name: "",
@@ -40,20 +42,52 @@ class FindEmployees extends Component {
       });
   };
 
- onFilter = (e) => {
-// console.log(e.target.value);
-const filteredNameArray = this.state.people.filter(person=>{
-  return person.name.last.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
-})
-// console.log(filteredName);
-this.setState({filteredPeople: filteredNameArray}) 
- }
+  onFilter = (e) => {
+    // console.log(e.target.value);
+    const filteredNameArray = this.state.people.filter((person) => {
+      return (
+        person.name.last.toLowerCase().indexOf(e.target.value.toLowerCase()) !==
+        -1
+      );
+    });
+    // console.log(filteredName);
+    this.setState({ filteredPeople: filteredNameArray });
+  };
+
+  // sortByLastName = (e) => {
+  //   console.log(e.target.value);
+  //   const sortedLastNameArray = this.state.people.sort((a,b) => {
+  
+        
+  //         if(a.name.last < b.name.last) { return -1; }
+  //         if(a.name.last > b.name.last) { return 1; }
+  //         return 0;
+
+  //   });
+  //   console.log(sortedLastNameArray);
+  //   this.setState({ sortedPeople: sortedLastNameArray });
+  // };
+
+
+sortEmployees = () => {
+  console.log("hello world")
+function compareDesc(a,b){
+  if(a.name.last < b.name.last) { return -1; }
+  if(b.name.last < a.name.last) { return 1; }
+  return 0;
+}
+const sortedEmployees = this.state.people.sort(compareDesc);
+this.setState({ sortedPeople: sortedEmployees });
+}
+
+
 
   render() {
     return (
       <div>
-          <FilterForm onFilter={this.onFilter} />
-        <EmployeesTable people={this.state.filteredPeople} />
+        <SortForm  />
+        <FilterForm onFilter={this.onFilter} />
+        <EmployeesTable people={this.state.filteredPeople} sortEmployees={this.sortEmployees}/>
       </div>
     );
   }
@@ -61,4 +95,4 @@ this.setState({filteredPeople: filteredNameArray})
 
 export default FindEmployees;
 
-//two functions that sort or filter updated filteredPeople 
+//two functions that sort or filter updated filteredPeople
