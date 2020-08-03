@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API.js";
 import EmployeesTable from "./EmployeeTable";
 import FilterForm from "./FilterForm";
-import SortForm from "./SortForm.js";
+
 
 class FindEmployees extends Component {
   state = {
@@ -85,7 +85,6 @@ this.setState({ sortedPeople: sortedEmployees });
   render() {
     return (
       <div>
-        <SortForm  />
         <FilterForm onFilter={this.onFilter} />
         <EmployeesTable people={this.state.filteredPeople} sortEmployees={this.sortEmployees}/>
       </div>
