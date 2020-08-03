@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.js": "/gt-react-employee-directory/static/js/main.dd2fd700.chunk.js",
-    "main.js.map": "/gt-react-employee-directory/static/js/main.dd2fd700.chunk.js.map",
+    "main.css": "/gt-react-employee-directory/static/css/main.ff438824.chunk.css",
+    "main.js": "/gt-react-employee-directory/static/js/main.fde1f3cf.chunk.js",
+    "main.js.map": "/gt-react-employee-directory/static/js/main.fde1f3cf.chunk.js.map",
     "runtime-main.js": "/gt-react-employee-directory/static/js/runtime-main.0a0b18e8.js",
     "runtime-main.js.map": "/gt-react-employee-directory/static/js/runtime-main.0a0b18e8.js.map",
     "static/js/2.8cb942c2.chunk.js": "/gt-react-employee-directory/static/js/2.8cb942c2.chunk.js",
     "static/js/2.8cb942c2.chunk.js.map": "/gt-react-employee-directory/static/js/2.8cb942c2.chunk.js.map",
     "index.html": "/gt-react-employee-directory/index.html",
-    "precache-manifest.d6c3ff7805373c64e9c153d011495263.js": "/gt-react-employee-directory/precache-manifest.d6c3ff7805373c64e9c153d011495263.js",
+    "precache-manifest.f371b16423493e467a03828470d18e8c.js": "/gt-react-employee-directory/precache-manifest.f371b16423493e467a03828470d18e8c.js",
     "service-worker.js": "/gt-react-employee-directory/service-worker.js",
+    "static/css/main.ff438824.chunk.css.map": "/gt-react-employee-directory/static/css/main.ff438824.chunk.css.map",
     "static/js/2.8cb942c2.chunk.js.LICENSE.txt": "/gt-react-employee-directory/static/js/2.8cb942c2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0a0b18e8.js",
     "static/js/2.8cb942c2.chunk.js",
-    "static/js/main.dd2fd700.chunk.js"
+    "static/css/main.ff438824.chunk.css",
+    "static/js/main.fde1f3cf.chunk.js"
   ]
 }
