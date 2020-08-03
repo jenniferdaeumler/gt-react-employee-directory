@@ -5,6 +5,8 @@ import EmployeesTable from "./EmployeeTable";
 class FindEmployees extends Component {
   state = {
     people: [],
+    filteredPeople: [],
+    search: "",
     // imageURL: "",
     // name: "",
     // city: "",
@@ -22,6 +24,7 @@ class FindEmployees extends Component {
       .then((response) => {
         // console.log(response.data.results[0]);
         this.setState({
+          filteredPeople: response.data.results,
           people: response.data.results,
           // imageURL: response.data.results[0].picture.large,
           // name: response.data.results[0].name.first,
@@ -39,12 +42,12 @@ class FindEmployees extends Component {
   render() {
     return (
       <div>
-        <EmployeesTable people={this.state.people} 
-        />
-     
+        <EmployeesTable people={this.state.filteredPeople} />
       </div>
     );
   }
 }
 
 export default FindEmployees;
+
+//two functions that sort or filter updated filteredPeople 
