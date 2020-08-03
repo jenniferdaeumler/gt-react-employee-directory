@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // function EmployeeTable(props) {
 //   return (
@@ -31,20 +31,7 @@ function EmployeesTable(props) {
             <th scope="col">Phone</th>
           </tr>
         </thead>
-        <tbody>
-          {/* we need a row with all the information of each employee */}
-          {/* <tr>
-            <td>
-              <img src={props.picture} alt={props.firstName}></img>
-            </td>
-            <td>
-              {props.firstName} {props.lastName}
-            </td>
-            <td>{props.email}</td>
-            <td>{props.phone}</td>
-          </tr> */}
-          {props.people.map(renderTableData)}
-        </tbody>
+        <tbody>{props.people.map(renderTableData)}</tbody>
       </table>
     </div>
   );
@@ -54,7 +41,7 @@ function renderTableData(person) {
   return (
     <tr key={person.login.uuid}>
       <td>
-        <img src={person.picture.thumbnail} alt="Thumbnail" />
+        <img src={person.picture.thumbnail} alt="Employee Thumbnail" />
       </td>
       <td>
         {person.name.last} {person.name.first}
