@@ -10,7 +10,7 @@ const FilterForm = ({onFilter}) => {
             type="text"
             name= "search"
             className="filter"
-            placeholder="Filter by..."
+            placeholder="Filter by last name"
             //onCHange update state of serach term 
             onChange = {onFilter}
           />

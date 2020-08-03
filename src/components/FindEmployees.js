@@ -43,7 +43,7 @@ class FindEmployees extends Component {
  onFilter = (e) => {
 // console.log(e.target.value);
 const filteredNameArray = this.state.people.filter(person=>{
-  return person.name.first.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
+  return person.name.last.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
 })
 // console.log(filteredName);
 this.setState({filteredPeople: filteredNameArray}) 
