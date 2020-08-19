@@ -6,7 +6,7 @@ I created an employee directory with React. The application's UI is seperated in
 # Project Links
 [Link to GitHub Repo](https://github.com/jenniferdaeumler/gt-react-employee-directory)
 
-[Link to GitHub Pages Deployed Site](https://jenniferdaeumler.github.io/gt-react-employee-directory/)
+[Link to Deployed Site](https://jenniferdaeumler.github.io/gt-react-employee-directory/)
 
 ## User Story
 As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
